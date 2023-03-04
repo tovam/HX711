@@ -140,14 +140,14 @@ uint8_t HX711::get_gain()
 
 
 //  assumes tare() has been set.
-void HX711::calibrate_scale(uint16_t weight, uint8_t times)
+void HX711::calibrate_scale(uint32_t weight, uint8_t times)
 {
   _scale = (1.0 * weight) / (read_average(times) - _offset);
 }
 
 
 //  OBSOLETE 0.4.0  (LL is wrong)
-void HX711::callibrate_scale(uint16_t weight, uint8_t times)
+void HX711::callibrate_scale(uint32_t weight, uint8_t times)
 {
   calibrate_scale(weight, times);
 };
